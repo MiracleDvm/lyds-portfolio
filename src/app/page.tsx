@@ -33,7 +33,7 @@ export default function HomePage() {
         className="flex min-h-[calc(100vh-104px)] flex-col items-center justify-center px-4 sm:px-12"
         style={{ paddingTop: "clamp(56px, 9vh, 96px)", paddingBottom: "clamp(32px, 6vh, 64px)" }}
       >
-        <div className="relative flex items-end justify-center">
+        <h1 className="relative m-0 flex items-end justify-center font-normal">
           <span
             className="font-display relative"
             style={{ fontSize: "min(220px, 15.5vw)", lineHeight: 0.88, letterSpacing: "-.05em", fontWeight: 800, color: "var(--fg)", marginBottom: ".07em" }}
@@ -65,7 +65,7 @@ export default function HomePage() {
           <Sparkle size={28} color="#8E5BB5" className="absolute right-[1%] top-10 hidden sm:block" />
           <Sparkle size={24} color="#8E5BB5" className="absolute -left-[5%] bottom-10 hidden sm:block" />
           <Sparkle size={18} color="#E07F9C" className="absolute -right-[3%] bottom-5 hidden sm:block" />
-        </div>
+        </h1>
 
         <div className="mt-8 flex max-w-[1000px] flex-wrap justify-center gap-2 sm:mt-11">
           {skills.map((skill, i) => (

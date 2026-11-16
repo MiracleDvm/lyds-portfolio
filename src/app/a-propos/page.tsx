@@ -20,7 +20,7 @@ const SERVICES = [
       en: "Editorial calendar, posts, stories and community engagement.",
     },
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
       </svg>
     ),
@@ -34,7 +34,7 @@ const SERVICES = [
       en: "Ideas, filming and short videos made for TikTok and Instagram.",
     },
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <rect x="2" y="4" width="15" height="16" rx="3" />
         <path d="m22 8.5-5 3.5 5 3.5z" />
       </svg>
@@ -49,7 +49,7 @@ const SERVICES = [
       en: "Posters, social media visuals, brand guidelines and logos.",
     },
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <path d="M12 19l7-7 3 3-7 7-3-3z" />
         <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
         <path d="M2 2l7.586 7.586" />
@@ -66,7 +66,7 @@ const SERVICES = [
       en: "Clear website and app interfaces, designed in Figma.",
     },
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <rect x="2" y="3" width="20" height="18" rx="2" />
         <path d="M2 8h20M6 5.5h.01M9 5.5h.01" />
       </svg>
@@ -81,7 +81,7 @@ const SERVICES = [
       en: "Event coverage, portraits and short-video editing.",
     },
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
         <circle cx="12" cy="13" r="4" />
       </svg>
@@ -97,7 +97,7 @@ export default function AboutPage() {
     <PageShell>
       <Container maxWidth={1240}>
         <div className="flex flex-wrap items-center gap-10 sm:gap-16">
-          <div className="relative mx-auto w-full max-w-[420px] shrink-0 basis-[420px]">
+          <div className="relative mx-auto w-full max-w-[420px] basis-[420px]">
             <div
               className="animate-float-big rounded-t-full p-2"
               style={{

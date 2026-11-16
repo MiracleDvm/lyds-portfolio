@@ -120,7 +120,7 @@ export default function PhotographiePage() {
               onClick={() => setOpenIdx(i)}
               aria-label={fr ? `Agrandir la photo — ${t(SERIES[photo.series].label)}` : `Enlarge photo — ${t(SERIES[photo.series].label)}`}
               className="mb-[18px] block w-full rounded-[24px] p-2"
-              style={{ breakInside: "avoid", background: "var(--glass-bg)", border: "1.5px solid var(--glass-border)" }}
+              style={{ breakInside: "avoid", minHeight: 160, background: "var(--glass-bg)", border: "1.5px solid var(--glass-border)" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={photo.src} alt="" loading="lazy" className="w-full rounded-[17px]" />

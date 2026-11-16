@@ -96,7 +96,7 @@ export function PanelLightbox({
       aria-modal="true"
       onClick={onClose}
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ background: "rgba(42,22,38,.82)", backdropFilter: "blur(14px)" }}
+      style={{ background: "rgba(42,22,38,.82)", backdropFilter: "blur(14px)", overscrollBehavior: "contain" }}
     >
       <CloseButton onClose={onClose} label={fr ? "Fermer" : "Close"} />
       {multi && <NavButton side="left" onClick={onPrev} label={fr ? "Écran précédent" : "Previous screen"} />}
@@ -104,13 +104,13 @@ export function PanelLightbox({
 
       <div
         onClick={(e) => e.stopPropagation()}
-        className="flex max-h-[90vh] w-full max-w-[1100px] flex-col items-center gap-4 overflow-auto sm:flex-row sm:items-stretch sm:gap-9"
+        className="flex max-h-[90vh] w-full max-w-[1100px] flex-col items-center gap-4 overflow-auto lg:flex-row lg:items-stretch lg:gap-9"
       >
-        <div className="flex max-h-[54vh] w-full max-w-[84vw] shrink-0 items-center justify-center overflow-hidden rounded-[22px] bg-white sm:max-h-[82vh] sm:max-w-[56vw]">
+        <div className="flex max-h-[54vh] w-full max-w-[84vw] shrink-0 items-center justify-center overflow-hidden rounded-[22px] bg-white lg:max-h-[82vh] lg:max-w-[56vw]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={src} alt={alt} className="h-auto max-h-[54vh] w-auto object-contain sm:max-h-[82vh]" />
+          <img src={src} alt={alt} className="h-auto max-h-[54vh] w-auto object-contain lg:max-h-[82vh]" />
         </div>
-        <div className="w-full max-w-[520px] shrink-0 text-white sm:w-[300px]">
+        <div className="w-full max-w-[520px] shrink-0 text-white lg:w-[300px]">
           {badge && (
             <span className="mb-3 inline-block rounded-full px-3 py-1 text-xs font-semibold tracking-[.08em]" style={{ background: badgeBg }}>
               {badge}
@@ -165,7 +165,7 @@ export function CaptionLightbox({ open, onClose, onPrev, onNext, multi, index, t
       aria-modal="true"
       onClick={onClose}
       className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 p-4"
-      style={{ background: "rgba(20,10,18,.9)", backdropFilter: "blur(14px)" }}
+      style={{ background: "rgba(20,10,18,.9)", backdropFilter: "blur(14px)", overscrollBehavior: "contain" }}
     >
       <CloseButton onClose={onClose} label={fr ? "Fermer" : "Close"} />
       {multi && <NavButton side="left" onClick={onPrev} label={fr ? "Photo précédente" : "Previous photo"} />}

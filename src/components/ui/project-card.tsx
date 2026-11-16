@@ -1,6 +1,7 @@
 "use client";
 
 export function ProjectCard({
+  id,
   cover,
   badge,
   title,
@@ -11,6 +12,7 @@ export function ProjectCard({
   darkBg = false,
   onClick,
 }: {
+  id?: string;
   cover: string;
   badge?: string;
   title: string;
@@ -24,8 +26,9 @@ export function ProjectCard({
   return (
     <button
       type="button"
+      id={id}
       onClick={onClick}
-      className="proj-hover block w-full rounded-[28px] p-2.5 pb-[18px] text-left"
+      className="proj-hover block w-full scroll-mt-6 rounded-[28px] p-2.5 pb-[18px] text-left"
       style={{ background: "var(--glass-bg)", border: "1.5px solid var(--glass-border)" }}
     >
       <div

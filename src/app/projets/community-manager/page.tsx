@@ -47,7 +47,7 @@ export default function CommunityManagerPage() {
             className="flex flex-wrap items-center gap-7"
             style={{ background: "var(--glass-bg)", border: "1.5px solid var(--glass-border)", borderRadius: 34, padding: "clamp(16px,2.4vw,28px)" }}
           >
-            <div className="relative mx-auto w-full max-w-[300px] shrink-0 basis-[300px] rounded-[40px] p-2.5" style={{ background: "var(--card-bg)", boxShadow: "var(--card-shadow)" }}>
+            <div className="relative mx-auto w-full max-w-[300px] basis-[300px] rounded-[40px] p-2.5" style={{ background: "var(--card-bg)", boxShadow: "var(--card-shadow)" }}>
               <span className="absolute left-5 top-5 z-[1] rounded-full px-3 py-1 text-[11px] font-semibold tracking-[.1em] text-white" style={{ background: "rgba(42,22,38,.75)" }}>
                 BACKSTAGE
               </span>
@@ -111,7 +111,7 @@ export default function CommunityManagerPage() {
             className="flex flex-wrap items-center gap-7"
             style={{ background: "var(--glass-bg)", border: "1.5px solid var(--glass-border)", borderRadius: 34, padding: "clamp(16px,2.4vw,28px)" }}
           >
-            <div className="relative mx-auto aspect-square w-full max-w-[420px] shrink-0 basis-[420px]">
+            <div className="relative mx-auto aspect-square w-full max-w-[420px] basis-[420px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={media.designGraphique.peau[0]}

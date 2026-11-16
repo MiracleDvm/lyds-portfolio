@@ -24,7 +24,7 @@ const LINKS = [
     gradient: "linear-gradient(150deg, #E07F9C, #7A1F3D)",
     aria: { fr: "M'écrire un e-mail", en: "Send me an email" },
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <rect x="2" y="4" width="20" height="16" rx="2" />
         <path d="m22 7-10 6L2 7" />
       </svg>
@@ -38,7 +38,7 @@ const LINKS = [
     gradient: "linear-gradient(150deg, #3DDC6E, #1A9E4B)",
     aria: { fr: "M'écrire sur WhatsApp", en: "Message me on WhatsApp" },
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden>
         <path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.6.1-.2.3-.6.9-.8 1-.2.2-.3.2-.6.1-1.6-.8-2.6-1.4-3.7-3.1-.3-.4.3-.4.8-1.3.1-.2.1-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4-.2 0-.4 0-.6 0s-.6.1-.8.4c-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .2.2 2.1 3.2 5.1 4.4 2.5 1 2.5.8 3 .8.5-.1 1.7-.7 1.9-1.4.2-.6.2-1.2.1-1.3 0-.1-.2-.2-.5-.3z" />
         <path d="M12 2a10 10 0 0 0-8.6 15l-1 3.6 3.7-1A10 10 0 1 0 12 2z" fillOpacity="0" stroke="white" strokeWidth="1.6" />
       </svg>
@@ -52,7 +52,7 @@ const LINKS = [
     gradient: "linear-gradient(150deg, #1E88D6, #0A5FA8)",
     aria: { fr: "Voir mon profil LinkedIn", en: "See my LinkedIn profile" },
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden>
         <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.6-2 3.9 0 4.6 2.5 4.6 5.8V21h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z" />
       </svg>
     ),

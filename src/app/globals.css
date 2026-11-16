@@ -10,6 +10,7 @@
   --script-rose: #7a1f3d;
   --logo-main: #2a1626;
   --logo-apos: #8e5bb5;
+  --header-bg: rgba(251, 246, 241, 0.82);
 
   --glass-bg: linear-gradient(
     160deg,
@@ -51,6 +52,7 @@
   --script-rose: #f2c6d4;
   --logo-main: #ffffff;
   --logo-apos: #e9ddf3;
+  --header-bg: rgba(42, 22, 38, 0.82);
 
   --glass-bg: linear-gradient(
     160deg,
@@ -204,6 +206,23 @@ body {
   font-family: var(--font-sans), sans-serif;
   transition: background-color 0.5s ease, color 0.5s ease;
   overflow-x: hidden;
+}
+
+button,
+a {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 a {

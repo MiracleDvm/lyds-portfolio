@@ -18,7 +18,9 @@ export function PageShell({
     <div className="relative flex min-h-screen flex-col overflow-hidden">
       <HaloField halos={halos} />
       <Header minimal={minimalHeader} />
-      <main className="relative z-[2] flex-1">{children}</main>
+      <main className="relative flex-1" style={{ paddingTop: "var(--header-h, 104px)" }}>
+        {children}
+      </main>
       <Footer />
     </div>
   );

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Great_Vibes, Outfit } from "next/font/google";
 import { SiteProvider } from "@/context/site-provider";
 import "./globals.css";
@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   description:
     "Portfolio créatif de Doriane Atohountoun : community management, création de contenu, design graphique, web & UI/UX, photographie et montage vidéo.",
   metadataBase: new URL("https://lyds-portfolio.vercel.app"),
+};
+
+export const viewport: Viewport = {
+  themeColor: "#FBF6F1",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

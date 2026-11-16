@@ -155,7 +155,8 @@ export default function WebUxPage() {
           {CASES.map((c) => (
             <article
               key={c.id}
-              className="flex flex-wrap items-stretch gap-7"
+              id={c.id}
+              className="flex flex-wrap items-stretch gap-7 scroll-mt-6"
               style={{ background: "var(--glass-bg)", border: "1.5px solid var(--glass-border)", borderRadius: 34, padding: "clamp(16px,2.4vw,28px)" }}
             >
               <button

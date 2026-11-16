@@ -11,7 +11,7 @@ export function LangSwitch() {
       type="button"
       onClick={toggleLang}
       aria-label={fr ? "Passer en anglais" : "Switch to French"}
-      className="relative h-[60px] w-[136px] shrink-0 cursor-pointer rounded-full border-[1.5px] p-0 backdrop-blur-xl transition-[background,box-shadow] duration-500"
+      className="chip-hover relative h-[60px] w-[136px] shrink-0 cursor-pointer rounded-full border-[1.5px] p-0 backdrop-blur-xl transition-[background,box-shadow] duration-500 max-[480px]:[zoom:.66]"
       style={{
         background: "var(--track-bg)",
         borderColor: "var(--track-border)",
@@ -74,7 +74,7 @@ export function ThemeSwitch() {
       aria-label={
         fr ? (dark ? "Passer en mode clair" : "Passer en mode sombre") : dark ? "Switch to light mode" : "Switch to dark mode"
       }
-      className="relative h-[60px] w-[136px] shrink-0 cursor-pointer rounded-full border-[1.5px] p-0 backdrop-blur-xl transition-[background,box-shadow] duration-500"
+      className="chip-hover relative h-[60px] w-[136px] shrink-0 cursor-pointer rounded-full border-[1.5px] p-0 backdrop-blur-xl transition-[background,box-shadow] duration-500 max-[480px]:[zoom:.66]"
       style={{
         background: "var(--track-bg)",
         borderColor: "var(--track-border)",

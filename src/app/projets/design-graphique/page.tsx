@@ -229,6 +229,7 @@ export default function DesignGraphiquePage() {
           {filtered.map((p) => (
             <ProjectCard
               key={p.id}
+              id={p.id}
               cover={p.imgs[0]}
               badge={CLIENT_LABEL[p.client][fr ? "fr" : "en"]}
               title={t(p.title)}

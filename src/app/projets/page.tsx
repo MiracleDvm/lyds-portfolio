@@ -13,7 +13,7 @@ const CATEGORIES = [
     href: "/projets/community-manager",
     title: { fr: "Community manager", en: "Community manager" },
     icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
       </svg>
     ),
@@ -22,7 +22,7 @@ const CATEGORIES = [
     href: "/projets/creatrice-de-contenu",
     title: { fr: "Créatrice de contenu", en: "Content creator" },
     icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <rect x="2" y="4" width="15" height="16" rx="3" />
         <path d="m22 8.5-5 3.5 5 3.5z" />
       </svg>
@@ -32,7 +32,7 @@ const CATEGORIES = [
     href: "/projets/design-graphique",
     title: { fr: "Design graphique", en: "Graphic design" },
     icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <path d="M12 19l7-7 3 3-7 7-3-3z" />
         <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
         <circle cx="11" cy="11" r="2" />
@@ -43,7 +43,7 @@ const CATEGORIES = [
     href: "/projets/web-ux",
     title: { fr: "Web & UI/UX", en: "Web & UI/UX" },
     icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <rect x="2" y="3" width="20" height="18" rx="2" />
         <path d="M2 8h20M6 5.5h.01M9 5.5h.01" />
       </svg>
@@ -53,7 +53,7 @@ const CATEGORIES = [
     href: "/projets/photographie",
     title: { fr: "Photographie", en: "Photography" },
     icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
         <circle cx="12" cy="13" r="4" />
       </svg>
@@ -63,7 +63,7 @@ const CATEGORIES = [
     href: "/projets/montage-video",
     title: { fr: "Montage vidéo", en: "Video editing" },
     icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <rect x="2" y="3" width="20" height="18" rx="2" />
         <path d="M7 3v18M17 3v18M2 8h5M2 16h5M17 8h5M17 16h5" />
       </svg>
@@ -73,7 +73,7 @@ const CATEGORIES = [
 
 const FEATURED = [
   {
-    href: "/projets/web-ux",
+    href: "/projets/web-ux#mammonet",
     img: media.webux.mammonet[0],
     title: "MammoNet",
     badge: { fr: "2e place · KYIA 2026", en: "2nd place · KYIA 2026" },
@@ -81,7 +81,7 @@ const FEATURED = [
     alt: { fr: "Interfaces de MammoNet sur ordinateur, tablette et mobile", en: "MammoNet interfaces on desktop, tablet and mobile" },
   },
   {
-    href: "/projets/web-ux",
+    href: "/projets/web-ux#meditrace",
     img: media.webux.meditrace[0],
     title: "MediTrace",
     badge: { fr: "2e prix · MTN Innovation Lab", en: "2nd prize · MTN Innovation Lab" },
@@ -89,7 +89,7 @@ const FEATURED = [
     alt: { fr: "Aperçu des interfaces de MediTrace", en: "MediTrace interfaces overview" },
   },
   {
-    href: "/projets/design-graphique",
+    href: "/projets/design-graphique#lyds",
     img: media.designGraphique.lyds[0],
     title: { fr: "Charte graphique Lyd's", en: "Lyd's brand guidelines" },
     badge: { fr: "Projet personnel", en: "Personal project" },
@@ -146,6 +146,7 @@ export default function ProjetsPage() {
               strokeLinejoin="round"
               className="transition-transform duration-300"
               style={{ transform: open ? "rotate(180deg)" : "none" }}
+              aria-hidden
             >
               <path d="M6 9l6 6 6-6" />
             </svg>

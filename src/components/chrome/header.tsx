@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSite } from "@/context/site-provider";
 import { media } from "@/lib/media";
 import { Logo } from "./logo";
@@ -27,6 +27,17 @@ export function Header({ minimal = false }: { minimal?: boolean }) {
   const { fr, dark } = useSite();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const setVar = () => document.documentElement.style.setProperty("--header-h", `${el.offsetHeight}px`);
+    setVar();
+    const observer = new ResizeObserver(setVar);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [menuOpen]);
 
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
@@ -43,8 +54,14 @@ export function Header({ minimal = false }: { minimal?: boolean }) {
 
   return (
     <header
-      className="relative z-20 flex items-center justify-between gap-4 border-b px-0 py-[26px] pb-[18px]"
-      style={{ margin: "0 clamp(20px, 4.5vw, 64px)", borderColor: "var(--rule)" }}
+      ref={headerRef}
+      className="fixed inset-x-0 top-0 z-40 flex items-center justify-between gap-4 border-b py-[26px] pb-[18px] backdrop-blur-xl"
+      style={{
+        paddingLeft: "clamp(20px, 4.5vw, 64px)",
+        paddingRight: "clamp(20px, 4.5vw, 64px)",
+        borderColor: "var(--rule)",
+        background: "var(--header-bg)",
+      }}
     >
       <Link href="/" aria-label={fr ? "Lyd's — accueil" : "Lyd's — home"} className="block shrink-0 leading-none">
         <Logo className="h-[57px] w-[100px] max-[640px]:h-auto max-[640px]:w-[74px]" />
@@ -61,7 +78,7 @@ export function Header({ minimal = false }: { minimal?: boolean }) {
               key={item.href}
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
-              className="inline-flex min-h-[46px] items-center whitespace-nowrap rounded-full px-[22px] text-[15px] no-underline transition-colors duration-300"
+              className="chip-hover inline-flex min-h-[46px] items-center whitespace-nowrap rounded-full px-[22px] text-[15px] no-underline transition-colors duration-300"
               style={navPillStyle(isActive(item.href))}
             >
               {fr ? item.fr : item.en}
@@ -71,7 +88,7 @@ export function Header({ minimal = false }: { minimal?: boolean }) {
             type="button"
             onClick={downloadCv}
             aria-label={fr ? "Télécharger mon CV" : "Download my CV"}
-            className="inline-flex min-h-[46px] cursor-pointer items-center gap-[7px] whitespace-nowrap rounded-full border border-white/50 px-4 pl-4 text-[15px] font-semibold text-[#FBF6F1] shadow-[0_6px_14px_rgba(122,31,61,.3),inset_0_2px_3px_rgba(255,255,255,.35)]"
+            className="chip-hover inline-flex min-h-[46px] cursor-pointer items-center gap-[7px] whitespace-nowrap rounded-full border border-white/50 px-4 pl-4 text-[15px] font-semibold text-[#FBF6F1] shadow-[0_6px_14px_rgba(122,31,61,.3),inset_0_2px_3px_rgba(255,255,255,.35)]"
             style={{ background: "linear-gradient(120deg, #7A1F3D, #B4456A 55%, #C9A66B)" }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -83,15 +100,17 @@ export function Header({ minimal = false }: { minimal?: boolean }) {
       )}
 
       <div className="flex items-center gap-3">
-        <LangSwitch />
-        <ThemeSwitch />
+        <div className={minimal ? "flex items-center gap-3" : "hidden items-center gap-3 min-[1141px]:flex"}>
+          <LangSwitch />
+          <ThemeSwitch />
+        </div>
         {!minimal && (
           <button
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={fr ? (menuOpen ? "Fermer le menu" : "Ouvrir le menu") : menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
-            className="flex h-[58px] w-[58px] shrink-0 cursor-pointer items-center justify-center rounded-full backdrop-blur-xl min-[1141px]:hidden"
+            className="chip-hover flex h-[58px] w-[58px] shrink-0 cursor-pointer items-center justify-center rounded-full backdrop-blur-xl min-[1141px]:hidden"
             style={{
               color: "var(--fg)",
               background: "var(--glass-bg)",
@@ -119,13 +138,17 @@ export function Header({ minimal = false }: { minimal?: boolean }) {
             animation: "lydsDrop .35s ease",
           }}
         >
+          <div className="mb-1 flex items-center justify-center gap-3 min-[1141px]:hidden">
+            <LangSwitch />
+            <ThemeSwitch />
+          </div>
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
               onClick={() => setMenuOpen(false)}
-              className="flex min-h-[54px] items-center justify-between rounded-[18px] px-5 text-lg no-underline"
+              className="chip-hover flex min-h-[54px] items-center justify-between rounded-[18px] px-5 text-lg no-underline"
               style={navPillStyle(isActive(item.href))}
             >
               {fr ? item.fr : item.en}
@@ -137,7 +160,7 @@ export function Header({ minimal = false }: { minimal?: boolean }) {
           <button
             type="button"
             onClick={downloadCv}
-            className="flex min-h-[54px] w-full cursor-pointer items-center justify-between rounded-[18px] border-none px-5 text-lg font-semibold text-[#FBF6F1]"
+            className="chip-hover flex min-h-[54px] w-full cursor-pointer items-center justify-between rounded-[18px] border-none px-5 text-lg font-semibold text-[#FBF6F1]"
             style={{ background: "linear-gradient(120deg, #7A1F3D, #B4456A 55%, #C9A66B)" }}
           >
             {fr ? "Télécharger mon CV" : "Download my CV"}

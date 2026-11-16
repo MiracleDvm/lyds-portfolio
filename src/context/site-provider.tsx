@@ -52,6 +52,8 @@ export function SiteProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme === "sombre" ? "dark" : "light";
+    const meta = document.querySelector('meta[name="theme-color"]');
+    meta?.setAttribute("content", theme === "sombre" ? "#2A1626" : "#FBF6F1");
   }, [theme]);
 
   useEffect(() => {
