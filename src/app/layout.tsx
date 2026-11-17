@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Great_Vibes, Outfit } from "next/font/google";
+import { CurtainProvider } from "@/components/chrome/curtain-transition";
 import { SiteProvider } from "@/context/site-provider";
 import "./globals.css";
 
@@ -36,7 +37,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" className={`${bricolage.variable} ${greatVibes.variable} ${outfit.variable}`}>
       <body>
-        <SiteProvider>{children}</SiteProvider>
+        <SiteProvider>
+          <CurtainProvider>{children}</CurtainProvider>
+        </SiteProvider>
       </body>
     </html>
   );

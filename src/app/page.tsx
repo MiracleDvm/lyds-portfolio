@@ -1,5 +1,7 @@
 "use client";
 
+import type { MouseEvent } from "react";
+import { useCurtain } from "@/components/chrome/curtain-transition";
 import { HALO_HOME } from "@/components/chrome/halo-field";
 import { PageShell } from "@/components/chrome/page-shell";
 import { ArrowRightIcon, FloatingChip, GradientButton, Sparkle } from "@/components/ui/primitives";
@@ -25,7 +27,14 @@ const SKILLS_EN = [
 
 export default function HomePage() {
   const { fr } = useSite();
+  const { play } = useCurtain();
   const skills = fr ? SKILLS_FR : SKILLS_EN;
+
+  const handleEnter = (e: MouseEvent) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    play("/a-propos");
+  };
 
   return (
     <PageShell halos={HALO_HOME} minimalHeader>
@@ -80,7 +89,7 @@ export default function HomePage() {
         </div>
 
         <div style={{ marginTop: "clamp(10px, 2vh, 32px)" }}>
-          <GradientButton href="/a-propos" icon={<ArrowRightIcon />}>
+          <GradientButton href="/a-propos" onClick={handleEnter} icon={<ArrowRightIcon />}>
             {fr ? "Entrer dans mon univers" : "Enter my world"}
           </GradientButton>
         </div>

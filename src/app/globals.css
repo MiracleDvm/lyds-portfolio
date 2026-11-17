@@ -11,6 +11,9 @@
   --logo-main: #2a1626;
   --logo-apos: #8e5bb5;
   --header-bg: rgba(251, 246, 241, 0.82);
+  --curtain-top: #f2a37e;
+  --curtain-mid: #e07f9c;
+  --curtain-base: #2a1626;
 
   --glass-bg: linear-gradient(
     160deg,
@@ -53,6 +56,9 @@
   --logo-main: #ffffff;
   --logo-apos: #e9ddf3;
   --header-bg: rgba(42, 22, 38, 0.82);
+  --curtain-top: #8e5bb5;
+  --curtain-mid: #7a1f3d;
+  --curtain-base: #2a1626;
 
   --glass-bg: linear-gradient(
     160deg,

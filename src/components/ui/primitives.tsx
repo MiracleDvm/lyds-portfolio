@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import type { CSSProperties, ReactNode } from "react";
+import type { CSSProperties, MouseEvent, ReactNode } from "react";
 import { useSite } from "@/context/site-provider";
 import { floatAnimation } from "@/lib/motion";
 
@@ -123,7 +123,7 @@ export function GradientButton({
   icon,
 }: {
   href?: string;
-  onClick?: () => void;
+  onClick?: (e: MouseEvent) => void;
   children: ReactNode;
   icon?: ReactNode;
 }) {
@@ -139,7 +139,7 @@ export function GradientButton({
   };
   if (href) {
     return (
-      <Link href={href} className={className} style={style}>
+      <Link href={href} onClick={onClick} className={className} style={style}>
         {children}
         {icon}
       </Link>
