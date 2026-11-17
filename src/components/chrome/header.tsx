@@ -124,7 +124,7 @@ export function Header({ minimal = false }: { minimal?: boolean }) {
           style={{
             left: "clamp(20px, 4.5vw, 64px)",
             right: "clamp(20px, 4.5vw, 64px)",
-            background: "var(--glass-bg)",
+            background: "var(--nav-overlay-bg)",
             border: "1.5px solid var(--glass-border)",
             boxShadow: "var(--glass-shadow)",
             animation: "lydsDrop .35s ease",
