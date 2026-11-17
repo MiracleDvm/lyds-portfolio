@@ -139,10 +139,10 @@ const CERTS: { img: string; org: string; year: string; title: Bilingual }[] = [
 ];
 
 const TABS: { key: TabKey; label: Bilingual; entries: Entry[] | null }[] = [
-  { key: "form", label: { fr: "Formation", en: "Formation" }, entries: FORM },
   { key: "exp", label: { fr: "Expériences", en: "Experience" }, entries: EXP },
-  { key: "event", label: { fr: "Événements", en: "Events" }, entries: EVENT },
   { key: "cert", label: { fr: "Certifications", en: "Certifications" }, entries: null },
+  { key: "form", label: { fr: "Formation", en: "Formation" }, entries: FORM },
+  { key: "event", label: { fr: "Événements", en: "Events" }, entries: EVENT },
 ];
 
 function Timeline({ entries }: { entries: Entry[] }) {
@@ -182,7 +182,7 @@ function Timeline({ entries }: { entries: Entry[] }) {
 
 export default function ParcoursPage() {
   const { fr, t } = useSite();
-  const [tab, setTab] = useState<TabKey>("form");
+  const [tab, setTab] = useState<TabKey>("exp");
   const active = TABS.find((x) => x.key === tab)!;
 
   return (

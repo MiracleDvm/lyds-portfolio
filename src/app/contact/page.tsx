@@ -1,19 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { AvailabilityPill, Eyebrow, Sparkle } from "@/components/ui/primitives";
+import { Eyebrow, Sparkle } from "@/components/ui/primitives";
 import { Container, PageShell } from "@/components/chrome/page-shell";
 import { useSite } from "@/context/site-provider";
+import { downloadCv } from "@/lib/download-cv";
 import { media } from "@/lib/media";
 import { floatAnimation } from "@/lib/motion";
-
-function downloadCv() {
-  const a = document.createElement("a");
-  a.href = media.cv;
-  a.download = "CV_Doriane_Atohountoun.pdf";
-  a.rel = "noopener";
-  a.click();
-}
 
 const LINKS = [
   {
@@ -98,7 +91,6 @@ export default function ContactPage() {
         </div>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">
-          <AvailabilityPill />
           <button
             type="button"
             onClick={downloadCv}

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useSite } from "@/context/site-provider";
-import { media } from "@/lib/media";
+import { downloadCv } from "@/lib/download-cv";
 import { Logo } from "./logo";
 import { LangSwitch, ThemeSwitch } from "./switches";
 
@@ -14,14 +14,6 @@ const NAV = [
   { href: "/parcours", fr: "Parcours", en: "Journey" },
   { href: "/contact", fr: "Contact", en: "Contact" },
 ];
-
-function downloadCv() {
-  const a = document.createElement("a");
-  a.href = media.cv;
-  a.download = "CV_Doriane_Atohountoun.pdf";
-  a.rel = "noopener";
-  a.click();
-}
 
 export function Header({ minimal = false }: { minimal?: boolean }) {
   const { fr, dark } = useSite();

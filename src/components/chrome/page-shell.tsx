@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { Footer } from "./footer";
 import { HALO_SUBPAGE, HaloField } from "./halo-field";
 import { Header } from "./header";
 
@@ -21,7 +20,6 @@ export function PageShell({
       <main className="relative flex-1" style={{ paddingTop: "var(--header-h, 104px)" }}>
         {children}
       </main>
-      <Footer />
     </div>
   );
 }

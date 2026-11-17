@@ -116,16 +116,6 @@ export function GlassPanel({
   );
 }
 
-export function AvailabilityPill() {
-  const { fr } = useSite();
-  return (
-    <GlassPanel radius={999} className="inline-flex min-h-10 items-center gap-2.5 px-4 pl-3.5 text-[13px] font-semibold" style={{ color: "var(--fg)" }}>
-      <span aria-hidden className="h-2.5 w-2.5 rounded-full animate-pulse-dot" style={{ background: "#2EB46E" }} />
-      {fr ? "Disponible pour missions & stages" : "Available for projects & internships"}
-    </GlassPanel>
-  );
-}
-
 export function GradientButton({
   href,
   onClick,

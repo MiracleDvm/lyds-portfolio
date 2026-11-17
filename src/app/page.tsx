@@ -2,7 +2,7 @@
 
 import { HALO_HOME } from "@/components/chrome/halo-field";
 import { PageShell } from "@/components/chrome/page-shell";
-import { AvailabilityPill, ArrowRightIcon, FloatingChip, GradientButton, Sparkle } from "@/components/ui/primitives";
+import { ArrowRightIcon, FloatingChip, GradientButton, Sparkle } from "@/components/ui/primitives";
 import { useSite } from "@/context/site-provider";
 import { media } from "@/lib/media";
 
@@ -79,10 +79,6 @@ export default function HomePage() {
           <GradientButton href="/a-propos" icon={<ArrowRightIcon />}>
             {fr ? "Entrer dans mon univers" : "Enter my world"}
           </GradientButton>
-        </div>
-
-        <div className="mt-4">
-          <AvailabilityPill />
         </div>
       </div>
     </PageShell>
